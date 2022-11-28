@@ -1,0 +1,7 @@
+language: generic
+services:
+  - docker
+script:
+  - docker build -t hoangpt11/simple-node .
+  - docker tag hoangpt11/simple-node:latest pthhhhhh/cloud-travis-p3:latest
+  - docker push pthhhhhh/cloud-travis-p3:latest

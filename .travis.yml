@@ -1,9 +1,11 @@
-language: generic
+language: node_js
+node_js:
+  - 13
 services:
   - docker
-before_script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 script:
   - docker build -t hoangpt11/simple-node .
   - docker tag hoangpt11/simple-node:latest pthhhhhh/cloud-travis-p3:latest
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push pthhhhhh/cloud-travis-p3:latest

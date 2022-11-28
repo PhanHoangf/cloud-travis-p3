@@ -4,8 +4,8 @@ node_js:
 services:
   - docker
 script:
-  - docker build -t hoangpt11/simple-node .
-  - docker tag hoangpt11/simple-node pthhhhhh/cloud-travis-p3:latest
+  - docker build -t simple-node-v2 .
+  - docker tag simple-node-v2 pthhhhhh/cloud-travis-p3:latest
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push pthhhhhh/cloud-travis-p3

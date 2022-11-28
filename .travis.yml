@@ -2,7 +2,7 @@ language: generic
 services:
   - docker
 before_script:
-  - docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker login -u "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
 script:
   - docker build -t hoangpt11/simple-node .
   - docker tag hoangpt11/simple-node:latest pthhhhhh/cloud-travis-p3:latest
